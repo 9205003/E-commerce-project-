@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Design Store</title>
+  <link rel="stylesheet" href="asstyles.css">
+</head>
+<body>
+  <header>
+    <h1>Interior Design Store</h1>
+  </header>
+  
+  <main>
+    <section id="products">
+      <!-- Product listing goes here -->
+      <div class="product">
+        <h2>Product 1</h2>
+        <p>Price: $100</p>
+        <button onclick="addToCart('Product 1', 100)">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <h2>Product 2</h2>
+        <p>Price: $150</p>
+        <button onclick="addToCart('Product 2', 150)">Add to Cart</button>
+      </div>
+
+      <!-- Add more products as needed -->
+    </section>
+
+    <section id="cart">
+      <h2>Shopping Cart</h2>
+      <ul id="cart-items">
+        <!-- Cart items will be displayed here -->
+      </ul>
+      <p>Total: $<span id="cart-total">0</span></p>
+      <button onclick="getCartData()">Refresh Cart</button>
+    </section>
+  </main>
+
+  <script src="ml.js"></script>
+</body>
+</html>

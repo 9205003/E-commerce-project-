@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your E-commerce Project</title>
+    <!-- Include Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.2/firebase-auth.js"></script>
+
+
+    <script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyA1rFNPMBXau8mhKmGLVISLahRaur5zRbo",
+    authDomain: "e-commerce-72cee.firebaseapp.com",
+    projectId: "e-commerce-72cee",
+    storageBucket: "e-commerce-72cee.appspot.com",
+    messagingSenderId: "923914177229",
+    appId: "1:923914177229:web:061c04487654c61ceab784"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<body>
+    <h1>E-commerce Project</h1>
+
+    <!-- Login Form -->
+    <div id="login-form">
+        <h2>Login</h2>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Additional Login Details -->
+    <div id="additional-login-details">
+        <h2>Additional Login Details</h2>
+        <!-- Add more input fields for additional login details as needed -->
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+        <!-- Add more fields as needed -->
+    </div>
+
+    <!-- Include your other HTML content -->
+
+    <!-- Include the script with the added functions -->
+    <script src="ml.js"></script>
+
+    <script>
+        // Function to handle login
+        function login() {
+            // Implement your login logic here
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Additional login details
+            var username = document.getElementById('username').value;
+
+            // Use Firebase authentication to sign in
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    var user = userCredential.user;
+                    console.log('Logged in:', user.email);
+
+                    // Add logic for additional login details if needed
+                    console.log('Username:', username);
+
+                    // Implement any other logic you need after successful login
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    console.error('Login error:', errorMessage);
+                });
+        }
+    </script>
+</body>
+</html>
